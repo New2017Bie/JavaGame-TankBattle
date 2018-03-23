@@ -1,0 +1,147 @@
+/**********************************************
+ * Project: tank
+ * Author: Bo Yu
+ * Date: 3/1/18
+ * Time: 1:37 PM
+ ***********************************************/
+
+package tankv3_enemydies;
+
+import java.util.Vector;
+
+public class Tank {
+    private int x = 0;
+    private int y = 0;
+    private int direction = 0;
+    private int speed = 1;
+    private int color = 0;
+    private Bullet bullet = null;
+    private Vector<Bullet> bv = new Vector<>();
+    private boolean isAlive = true;
+
+    public Tank (int x, int y, int color, int speed) {
+        setY(y);
+        setX(x);
+        setColor(color);
+        setSpeed(speed);
+    }
+
+    public void fire() {
+        Thread t = null;
+
+        for (int i = bv.size() - 1; i >= 0; i--) {
+            if (!bv.get(i).isAlive()) bv.remove(i);
+        }
+
+        if (bv.size() < 5) {
+            // determine the direction
+            switch (getDirection()) {
+                case 0:
+                    bullet = new Bullet(getX() - 1, getY() - 25, 0, 5);
+                    break;
+                case 1:
+                    bullet = new Bullet(getX() - 1, getY() + 25, 1, 5);
+                    break;
+                case 2:
+                    bullet = new Bullet(getX() - 25, getY() - 1, 2, 5);
+                    break;
+                case 3:
+                    bullet = new Bullet(getX() + 25, getY() - 1, 3, 5);
+                    break;
+            }
+
+            bv.add(bullet);
+        }
+        // no more than 5 bullets each time
+
+        t = new Thread(bullet);
+        t.start();
+    }
+
+    public void moveUp() {
+        if (getY() - 25 - getSpeed() >= 0) setY(getY() - getSpeed());
+    }
+
+    public void moveDown() {
+        if (getY() + 50 + getSpeed() <= TankDemo1.screenHeight) setY(getY() + getSpeed());
+    }
+
+    public void moveLeft() {
+        if (getX() - 23 - getSpeed() >= 0) setX(getX() - getSpeed());
+    }
+
+    public void moveRight() {
+        if (getX() + 23 + getSpeed() <= TankDemo1.screenWidth) setX(getX() + getSpeed());
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public Vector<Bullet> getBv() {
+        return bv;
+    }
+
+    public Bullet getBullet() {
+        return bullet;
+    }
+
+    public void setBullet(Bullet bullet) {
+        this.bullet = bullet;
+    }
+
+    public void removeBullet(int n) {
+        bv.remove(n);
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+
+
+//    public boolean isInbounds() {
+//        return (getX() - 25 >= 0 && getX() + 25  <= TankDemo1.screenWidth &&
+//                getY() -25 >= 0 && getY() + 25 <= TankDemo1.screenHeight);
+//    }
+}

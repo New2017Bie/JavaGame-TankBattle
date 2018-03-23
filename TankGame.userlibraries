@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="algs4">
+    <archive path="/home/bu/Documents/DevWorks/Java/CSIS2420/algs4.jar" />
+  </library>
+  <library name="mysql-connector-java-5.1.45-bin.jar">
+    <archive path="/home/bu/Documents/DevWorks/IdeaGlobalLib/mysql-connector-java-5.1.45-bin.jar" />
+  </library>
+  <library name="Python 3.5 interpreter library">
+    <archive path="/usr/lib/python3.5" />
+    <archive path="/usr/lib/python3.5/plat-x86_64-linux-gnu" />
+    <archive path="/usr/lib/python3.5/lib-dynload" />
+    <archive path="/home/bu/.local/lib/python3.5/site-packages" />
+    <archive path="/usr/local/lib/python3.5/dist-packages" />
+    <archive path="/usr/lib/python3/dist-packages" />
+    <archive path="/home/bu/.IdeaIC2017.3/system/python_stubs/-1247971764" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/python-skeletons" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/stdlib/3.5" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/stdlib/3.4" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/stdlib/3.3" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/stdlib/3" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/stdlib/2and3" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/third_party/3" />
+    <archive path="/home/bu/.IntelliJIdea2017.3/config/plugins/python-ce/helpers/typeshed/third_party/2and3" />
+  </library>
+</eclipse-userlibraries>
+
